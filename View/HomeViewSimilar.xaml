@@ -1,0 +1,176 @@
+﻿<Window x:Class="LoginWindow.View.HomeViewSimilar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginWindow.View"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Title="HomeViewSimilar" Height="1080" Width="1400">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Yellow"/>
+            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="LoginBorder" Background="Green">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Blue" TargetName="LoginBorder"  />
+                                <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Border" x:Key="internalborder">
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderBrush" Value="SkyBlue"/>
+        </Style>
+
+        <Style TargetType="Border" x:Key="outerborder">
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderBrush" Value="SkyBlue"/>
+        </Style>
+        <Style TargetType="Label" x:Key="labels">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Height" Value="55"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid Name="container">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
+                    <GradientStop Color="#059212" Offset="1"/>
+                    <GradientStop Color="#9BEC00" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Border BorderThickness="10" BorderBrush="DarkBlue" Margin="50">
+                <Grid Margin="50">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+                    <Border Style="{StaticResource outerborder}" Margin="100,10">
+                        <Label Content="Dental PPO Evaluation Template" VerticalAlignment="Center"
+                               HorizontalAlignment="Center" FontSize="50" Foreground="Blue"/>
+                    </Border>
+                    <Grid Width="800" Grid.Row="1" Grid.RowSpan="4" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Enter Entity Name : "/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="Entity Name"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Enter ZIP3 : "/>
+                        <TextBox Grid.Column="1" Grid.Row="1" Text="856"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="PPO Standard GP : "/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Text="25"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="PPO Standard SP : "/>
+                        <TextBox Grid.Column="1" Grid.Row="3" Text="35"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Enter PPO Current FSID : "/>
+                        <TextBox Grid.Column="1" Grid.Row="4" Text="856"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="5" Text="TIN Number : "/>
+                        <TextBox Grid.Column="1" Grid.Row="5" Text="7853694"/>
+
+                        <Label Grid.Row="6" Grid.ColumnSpan="2" Content="Select the template" FontSize="35"
+                               HorizontalAlignment="Center"/>
+
+                        <Button Content="General Practice" Grid.Row="7" Margin="10, 5, 10, 5" FontSize="30"/>
+                        <Button Content="Orthodontics" Grid.Row="7" Grid.Column="1" Margin="10, 5, 10, 5" FontSize="30"/>
+                        <Button Content="Endodontics" Grid.Row="8" Margin="10, 5, 10, 5" FontSize="30"/>
+                        <Button Content="Periodontics" Grid.Row="8" Grid.Column="1" Margin="10, 5, 10, 5" FontSize="30"/>
+                        <Button Content="Oral Surgery" Grid.Row="9" Margin="10, 5, 10, 5" FontSize="30"/>
+                        <Button Content="Multi-Speciality" Grid.Row="9" Grid.Column="1" Margin="10, 5, 10, 5" FontSize="30"/>
+
+                    </Grid>
+                    <!--<Border Grid.Row="1" BorderThickness="5" BorderBrush="LightBlue" Margin="0,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Margin="50, 15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="23*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="23*"/>
+                                </Grid.RowDefinitions>
+                                <Border Style="{StaticResource internalborder}">
+                                    <Label Content="Enter ZIP3" Style="{StaticResource labels}"/>
+                                </Border>
+                                <TextBox Grid.Row="1" Margin="10, 5" Text="856"
+                                         Style="{StaticResource inputboxes}"/>
+                                <Border Style="{StaticResource internalborder}" Grid.Row="2">
+                                    <Label Content="PPO Standard" Style="{StaticResource labels}"/>
+                                </Border>
+                                <Grid Grid.Row="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Style="{StaticResource internalborder}">
+                                        <Label Content="GP" Style="{StaticResource labels}"/>
+                                    </Border>
+                                    <Border Style="{StaticResource internalborder}" Grid.Column="1">
+                                        <Label Content="SP" Style="{StaticResource labels}"/>
+                                    </Border>
+                                </Grid>
+                                <Grid Grid.Row="4" Margin="5,1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Grid.Column="0" Margin="10, 5" Text="86"
+                                        Style="{StaticResource inputboxes}"/>
+                                    <TextBox Grid.Column="1" Margin="10, 5" Text="86"
+                                        Style="{StaticResource inputboxes}"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>-->
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
